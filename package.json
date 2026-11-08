@@ -1,5 +1,5 @@
 {
-  "name": "dsh-pdfzh",
+  "name": "dsh-pdf2zh",
   "version": "1.0.2",
   "description": "Native JavaScript PDF translation panel for DeepSeek Harness, with the full pdf2zh option set.",
   "type": "module",

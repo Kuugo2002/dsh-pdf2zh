@@ -1,6 +1,6 @@
 - insert:
-    - id: pdfzh
-      name: dsh-pdfzh
+    - id: pdf2zh
+      name: dsh-pdf2zh
       inject: [llm, webServer, connection]
       config:
         timeoutMs: 3600000

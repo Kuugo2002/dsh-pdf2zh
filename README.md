@@ -39,7 +39,7 @@ npm pack
 打包完成后，通过 Harness 安装生成的安装包：
 
 ```powershell
-$pluginPackage = Get-ChildItem -File -Filter 'dsh-pdfzh-*.tgz' | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+$pluginPackage = Get-ChildItem -File -Filter 'dsh-pdf2zh-*.tgz' | Sort-Object LastWriteTime -Descending | Select-Object -First 1
 dsh plugin --profile desktop add $pluginPackage.FullName
 ```
 
@@ -78,7 +78,7 @@ dsh plugin --profile desktop add $pluginPackage.FullName
 需要覆盖配置时，在 Harness desktop profile 的 `cordis.patch.yml` 中配置对应插件：
 
 ```yaml
-- id: pdfzh
+- id: pdf2zh
   config:
     python: C:/path/to/venv/Scripts/python.exe
     timeoutMs: 3600000
@@ -93,7 +93,7 @@ macOS / Linux 的解释器路径可使用 `/path/to/venv/bin/python`。请替换
 | `stateDir` | 自定义数据目录 |
 | `source` | 开发时覆盖翻译引擎源码目录，默认使用内置引擎 |
 
-也可通过 `PDFZH_PYTHON`、`PDFZH_SOURCE` 提供解释器和引擎路径；同名插件配置优先。
+也可通过 `PDF2ZH_PYTHON`、`PDF2ZH_SOURCE` 提供解释器和引擎路径；同名插件配置优先。
 
 模型 API Key 和服务地址在 Harness 服务商设置中管理。主翻译与术语模型分别路由到所选服务商。JSON 模式通过提示词约束输出，实际效果取决于模型能力。
 
@@ -110,7 +110,7 @@ macOS / Linux 的解释器路径可使用 `/path/to/venv/bin/python`。请替换
 
 结果和历史跨重启保留。任务记录支持逐条删除、勾选后删除所选以及清除所有；删除时一并清理对应的 `jobs/` 输出、临时文件和 `files/` 中不再使用的上传文件。清除所有还会清理这两个目录中的历史残留，即使列表为空也可使用。其他任务仍在引用的文件、设置中选用的术语表会保留。有运行或排队中的任务时，须先取消或等待结束，才能清除所有。任务日志可在“查看日志”中展开。
 
-升级时会迁移旧 `pdfzh-native` 数据目录中的设置、记录和文件，并保留旧目录作为备份。已有自定义 Python 环境继续使用原路径。BabelDOC 的字体、模型资源及翻译缓存沿用上游目录。
+升级时会迁移旧 `pdf2zh-native` 数据目录中的设置、记录和文件，并保留旧目录作为备份。已有自定义 Python 环境继续使用原路径。BabelDOC 的字体、模型资源及翻译缓存沿用上游目录。
 
 数据目录可能包含原文、译文及本机内部连接参数，请勿提交到公开仓库。使用自定义 `stateDir` 时，应同时将对应路径加入本地忽略规则。
 
@@ -134,7 +134,7 @@ vendor/PDFMathTranslate-next/
 cordis.patch.yml           Harness 插件注册配置
 ```
 
-浏览器接口位于 `/api/pdfzh/`，执行 Harness 浏览器信任检查。模型网关只监听本机回环地址，并校验任务令牌。取消任务或插件退出时，会终止对应 Python 进程树。
+浏览器接口位于 `/api/pdf2zh/`，执行 Harness 浏览器信任检查。模型网关只监听本机回环地址，并校验任务令牌。取消任务或插件退出时，会终止对应 Python 进程树。
 
 仓库已清除本地测试脚本、测试样本、测试环境、截图、引擎备份和旧安装包，并移除对应 npm 测试命令及开发依赖。构建产物、缓存、本地环境与运行数据由 `.gitignore` 排除。提交时保留 `package-lock.json` 和内置引擎源码。
 

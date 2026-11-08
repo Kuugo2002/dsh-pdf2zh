@@ -10,7 +10,7 @@ from pathlib import Path
 
 
 def emit(event):
-    print('PDFZH:' + json.dumps(event, ensure_ascii=False, default=str), flush=True)
+    print('PDF2ZH:' + json.dumps(event, ensure_ascii=False, default=str), flush=True)
 
 
 def clean_pdf_name(name):
