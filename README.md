@@ -61,6 +61,8 @@ dsh plugin --profile desktop add $pluginPackage.FullName
 
 **自动环境**通过 uv 下载 Python 3.13、创建插件专用虚拟环境并安装依赖，支持查看日志、取消、失败重试及重建。安装工具的版本及 SHA256 固定，不修改系统 PATH 或全局 Python，无需管理员权限。
 
+新安装的 Python、虚拟环境、uv 工具及安装缓存统一放在插件安装目录下的 `environment/` 中，卸载并删除插件目录时会一并删除。环境选择设置仍保存在数据目录中。旧版已安装的环境继续使用原路径，重新一键安装后使用插件内的新位置；旧目录中的环境保留，确认不再使用后可手动删除。
+
 **自定义环境**支持已有 venv / Conda 环境。填写解释器绝对路径，检测通过后保存。“安装 / 修复依赖并使用”会修改所选环境的依赖，建议为插件使用独立环境。
 
 运行依赖见 [`python/requirements.txt`](python/requirements.txt)。内置引擎要求 BabelDOC `>=0.7.1,<0.8.0`、PyMuPDF `>=1.26.7,<2`，不需要 Gradio 或 bitstring。旧环境检测不通过时，可在“环境”页修复。
@@ -104,7 +106,7 @@ macOS / Linux 的解释器路径可使用 `/path/to/venv/bin/python`。请替换
 | `state.json` | 界面偏好、上传文件登记和任务记录 |
 | `files/` | 上传的 PDF 与 CSV |
 | `jobs/` | 分任务输出及引擎请求信息 |
-| `environment/` | 环境选择、专用 Python、虚拟环境和安装缓存 |
+| `environment/settings.json` | 环境选择设置（Python、虚拟环境和安装缓存位于插件安装目录下的 `environment/`） |
 
 结果和历史跨重启保留。清除任务记录仅移除记录，不删除文件，也不会停止运行中的任务。任务日志可在“查看日志”中展开。
 
