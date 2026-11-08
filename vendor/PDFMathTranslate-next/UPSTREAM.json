@@ -1,0 +1,16 @@
+{
+  "files": 326,
+  "version": "2.10.2",
+  "repository": "https://github.com/PDFMathTranslate-next/PDFMathTranslate-next",
+  "commit": "07022b4d8585330c6b8413dd2cea9d203d1efb36",
+  "license": "AGPL-3.0",
+  "omitted": [
+    ".git",
+    ".doctemp",
+    "__pycache__",
+    "*.pyc",
+    "*.pyo",
+    "test/",
+    "tests/"
+  ]
+}

@@ -1,0 +1,23 @@
+# Runtime dependencies for the bundled PDF engine; no Gradio GUI.
+requests
+pymupdf>=1.26.7,<2
+tqdm
+tenacity
+numpy
+ollama
+xinference-client
+deepl
+openai>=1.0.0
+azure-ai-translation-text<=1.0.1
+tencentcloud-sdk-python-tmt
+peewee>=3.17.8
+fontTools
+babeldoc>=0.7.1,<0.8.0
+rich
+pydantic-settings>=2.8.1
+pydantic>=2.10.6
+httpx>=0.28.1
+chardet>=5.2.0
+pyyaml>=6.0.2
+tomlkit>=0.13
+packaging>=24

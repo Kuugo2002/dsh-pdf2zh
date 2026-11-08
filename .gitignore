@@ -1,0 +1,47 @@
+# JavaScript dependencies and build output
+node_modules/
+/dist/
+/build/
+/coverage/
+*.tgz
+*.tsbuildinfo
+
+# Python environments and generated caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.doctemp/
+
+# Local test output and runtime data
+/.test-state/
+/artifacts/
+/.dsh/
+/state.json
+/state.tmp.json
+/files/
+/jobs/
+/environment/
+
+# Local secrets and settings
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.local
+*.log
+.npmrc
+.pypirc
+
+# Editor and operating system files
+/.idea/
+/.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo

@@ -1,0 +1,10 @@
+This plugin reuses gateway.js and protocol.js from the local dsh-pdf2zh project
+(AGPL-3.0). PDFMathTranslate-next 2.10.2 (AGPL-3.0) is bundled under
+vendor/PDFMathTranslate-next, without Git metadata or generated caches.
+Its upstream revision is recorded in UPSTREAM.json; source and authorship
+remain unchanged for the runtime source. Upstream test directories are omitted;
+see UPSTREAM.json for the bundled-file exclusions.
+BabelDOC is a separate Python runtime dependency.
+The static interface translations and language list in lib/locales.json are
+derived from PDFMathTranslate-next. The JavaScript UI is a native rewrite.
+Full license text is provided in LICENSE.
