@@ -1,4 +1,4 @@
-# dsh-pdfzh
+# dsh-pdf2zh
 
 DeepSeek Harness 原生 PDF 翻译插件。
 
